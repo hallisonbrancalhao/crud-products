@@ -1,0 +1,30 @@
+<fieldset>
+    <legend>{{(product | async)?.name ?? 'Produto'}}</legend>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <section>
+            <label for="id">Id</label>
+            <input type="text" name="id" tabindex="-1" id="id" formControlName="id" readonly />
+        </section>
+        <section>
+            <label for="name">Nome</label>
+            <input type="text" name="name" id="name" formControlName="name" />
+            <output *ngIf="form.controls.name.touched && form.controls.name.invalid">Produto é obrigatório</output>
+        </section>
+        <section>
+            <label for="price">Preço</label>
+            <input type="number" name="price" id="price" formControlName="price" />
+            <output *ngIf="form.controls.price.touched && form.controls.price.invalid">Preço deve ser maior que
+                0</output>
+        </section>
+        <section>
+            <label for="amount">Quantidade</label>
+            <input type="number" name="amount" id="amount" formControlName="amount" />
+            <output *ngIf="form.controls.amount.touched && form.controls.amount.invalid">
+                Quantidade deve ser maior que 0
+            </output>
+
+        </section>
+        <button>Enviar</button>
+    </form>
+</fieldset>

@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let product of products | async">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.amount}}</td>
+            <td>
+                <button (click)="updated.emit(product)">Editar</button>
+                <button (click)="removed.emit(product.id)">Remover</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  form,
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+  form {
+      row-gap: 16px;
+  }
+  output {
+    font-size: 80%;
+    color: red;
+  }
+}
